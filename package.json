@@ -2,9 +2,17 @@
   "name": "@liquid-labs/validators",
   "version": "0.0.1",
   "description": "Validators for user input (strings).",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "files": [
+    "dist/",
+    "README.md"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "babel --source-maps inline index.js -d dist",
+    "start": "babel --watch --source-maps inline index.js -d dist",
+    "prepublishOnly": "rm -rf dist && babel index.js -d dist && find dist -name '*.test.js' | xargs rm",
+    "pretest": "babel --source-maps inline index.js -d dist",
+    "test": "jest --coverage dist"
   },
   "repository": {
     "type": "git",
@@ -18,5 +26,14 @@
   "bugs": {
     "url": "https://github.com/Liquid-Labs/validators/issues"
   },
-  "homepage": "https://github.com/Liquid-Labs/validators#readme"
+  "homepage": "https://github.com/Liquid-Labs/validators#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.1.0",
+    "@babel/core": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "jest": "^23.6.0"
+  },
+  "dependencies": {
+    "@liquid-labs/regex-repo": "0.0.5"
+  }
 }
