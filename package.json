@@ -1,0 +1,22 @@
+{
+  "name": "@liquid-labs/validators",
+  "version": "0.0.1",
+  "description": "Validators for user input (strings).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Liquid-Labs/validators.git"
+  },
+  "keywords": [
+    "validation"
+  ],
+  "author": "Zane Rockenbaugh <zane@liquid-labs.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Liquid-Labs/validators/issues"
+  },
+  "homepage": "https://github.com/Liquid-Labs/validators#readme"
+}
