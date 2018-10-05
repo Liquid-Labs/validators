@@ -1,3 +1,4 @@
 .catalyst
 dist/
+coverage/
 node_modules/

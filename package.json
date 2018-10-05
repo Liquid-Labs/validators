@@ -8,10 +8,12 @@
     "README.md"
   ],
   "scripts": {
-    "build": "babel --source-maps inline index.js -d dist",
-    "start": "babel --watch --source-maps inline index.js -d dist",
-    "prepublishOnly": "rm -rf dist && babel index.js -d dist && find dist -name '*.test.js' | xargs rm",
-    "pretest": "babel --source-maps inline index.js -d dist",
+    "lint": "eslint *.js --ignore-pattern '.*'",
+    "build": "babel --source-maps inline *.js -d dist",
+    "start": "babel --watch --source-maps inline *.js -d dist",
+    "prepare": "npm lint",
+    "prepublishOnly": "rm -rf dist && babel *.js -d dist && find dist -name '*.test.js' | xargs rm",
+    "pretest": "babel --source-maps inline *.js -d dist",
     "test": "jest --coverage dist"
   },
   "repository": {
@@ -31,6 +33,7 @@
     "@babel/cli": "^7.1.0",
     "@babel/core": "^7.1.0",
     "@babel/preset-env": "^7.1.0",
+    "eslint": "^5.6.1",
     "jest": "^23.6.0"
   },
   "dependencies": {
