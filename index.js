@@ -1,4 +1,4 @@
-import uuidRe from '@liquid-labs/regex-repo'
+//import uuidRe from '@liquid-labs/regex-repo'
 
 import * as msgs from './msgs'
 

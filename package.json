@@ -11,7 +11,7 @@
     "lint": "eslint *.js --ignore-pattern '.*'",
     "build": "babel --source-maps inline *.js -d dist",
     "start": "babel --watch --source-maps inline *.js -d dist",
-    "prepare": "npm lint",
+    "prepare": "npm run lint",
     "prepublishOnly": "rm -rf dist && babel *.js -d dist && find dist -name '*.test.js' | xargs rm",
     "pretest": "babel --source-maps inline *.js -d dist",
     "test": "jest --coverage dist"
