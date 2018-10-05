@@ -10,7 +10,7 @@ const isStringOrNothing = (value) => {
 }
 
 const notNothingAndString = (value) => {
-  if (value === undefined || value === null) {
+  if (value === undefined || value === null || value === '') {
     return false
   }
   else if (typeof value !== 'string') {
@@ -28,17 +28,17 @@ const isRequired = (value) => isStringOrNothing(value)
 
 const isEmail = (value) => notNothingAndString(value)
   && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)
-    ? 'Invalid email address.'
+    ? msgs.invalidEmail
     : undefined
 
 const isUsPhoneNumber = (value) => notNothingAndString(value)
-  && !/^(\(\d{3}\)|\d{3})[._ -]?\d{3}[._ -]?\d{4}$/.test(value)
-    ? 'Invalid phone number.'
+  && !/^(1[._ -]?)?(\(\d{3}\)|\d{3})[._ -]?\d{3}[._ -]?\d{4}$/.test(value)
+    ? msgs.invalidPhoneNumber
     : undefined
 
 const isZipCode = (value) => notNothingAndString(value)
   && !/^\d{5}([._ -]?\d{4})?$/.test(value)
-    ? 'Invalid zip code.'
+    ? msgs.invalidZipCode
     : undefined
 
 const fieldsMatch = (desc, otherValue) => (value) => notNothingAndString(value)
@@ -47,7 +47,6 @@ const fieldsMatch = (desc, otherValue) => (value) => notNothingAndString(value)
     : undefined
 
 export {
-  uuidRe,
   isRequired,
   isEmail,
   isUsPhoneNumber,
