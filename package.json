@@ -37,6 +37,6 @@
     "jest": "^23.6.0"
   },
   "dependencies": {
-    "@liquid-labs/regex-repo": "0.0.5"
+    "@liquid-labs/regex-repo": "file:../../../../usr/local/lib/node_modules/@liquid-labs/regex-repo"
   }
 }

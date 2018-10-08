@@ -10,13 +10,14 @@ test('isRequired should report error on any empty input.', function() {
   expect(validators.isRequired('')).toBe(msgs.isRequired)
 })
 
+// We rely on the testing of the underlying RegExp to catch different validation
+// errors. Here, we only check on the response of the validator to valid and
+// invalid inputs.
 test('isEmail should accept valid email.', function() {
   expect(validators.isEmail('foo@bar.com')).toBe(undefined)
-  expect(validators.isEmail('foo-_18+Z.tc@Bar-teg.co')).toBe(undefined)
 })
 test('isEmail should report on invalid email.', function() {
   expect(validators.isEmail('foo@bar.')).toBe(msgs.invalidEmail)
-  expect(validators.isEmail('foo@bar_baz.com')).toBe(msgs.invalidEmail)
 })
 
 test('isUsPhoneNumber should accept valid US phone number.', function() {

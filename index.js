@@ -1,4 +1,4 @@
-//import uuidRe from '@liquid-labs/regex-repo'
+import * as regex from '@liquid-labs/regex-repo'
 
 import * as msgs from './msgs'
 
@@ -27,7 +27,7 @@ const isRequired = (value) => isStringOrNothing(value)
     : undefined
 
 const isEmail = (value) => notNothingAndString(value)
-  && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)
+  && !regex.email.test(value)
     ? msgs.invalidEmail
     : undefined
 
