@@ -1,6 +1,6 @@
 {
   "name": "@liquid-labs/validators",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Validators for user input (strings).",
   "main": "dist/index.js",
   "files": [
@@ -38,5 +38,14 @@
   },
   "dependencies": {
     "@liquid-labs/regex-repo": "0.0.6"
-  }
+  },
+  "peerDependencies": {
+    "core-js": "1.x || 2.x"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
