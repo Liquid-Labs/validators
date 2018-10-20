@@ -1,6 +1,8 @@
 import * as validators from './index'
 import * as msgs from './msgs'
 
+/* global test, expect */
+
 test('isRequired should accept any non-empty value.', function() {
   expect(validators.isRequired('foo')).toBe(undefined)
 })

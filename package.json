@@ -1,19 +1,19 @@
 {
   "name": "@liquid-labs/validators",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Validators for user input (strings).",
   "main": "dist/index.js",
   "files": [
-    "dist/",
+    "dist/index.*",
     "README.md"
   ],
   "scripts": {
-    "lint": "eslint *.js --ignore-pattern '.*'",
-    "build": "babel --source-maps inline *.js -d dist",
-    "start": "babel --watch --source-maps inline *.js -d dist",
-    "prepare": "npm run lint",
-    "prepublishOnly": "rm -rf dist && babel *.js -d dist && find dist -name '*.test.js' | xargs rm",
-    "pretest": "babel --source-maps inline *.js -d dist",
+    "lint": "catalyst-scripts \"$PWD\" lint",
+    "lint-fix": "catalyst-scripts \"$PWD\" lint-fix",
+    "build": "catalyst-scripts \"$PWD\" build",
+    "start": "catalyst-scripts \"$PWD\" start",
+    "prepare": "npm run lint && npm run build",
+    "pretest": "catalyst-scripts \"$PWD\" build-test",
     "test": "jest --coverage dist"
   },
   "repository": {
@@ -30,17 +30,12 @@
   },
   "homepage": "https://github.com/Liquid-Labs/validators#readme",
   "devDependencies": {
-    "@babel/cli": "^7.1.0",
-    "@babel/core": "^7.1.0",
-    "@babel/preset-env": "^7.1.0",
-    "eslint": "^5.6.1",
+    "@liquid-labs/catalyst-scripts": "file:liquid-labs-catalyst-scripts-0.0.7.tgz",
+    "@liquid-labs/regex-repo": "0.0.6",
     "jest": "^23.6.0"
   },
-  "dependencies": {
-    "@liquid-labs/regex-repo": "0.0.6"
-  },
   "peerDependencies": {
-    "core-js": "1.x || 2.x"
+    "@liquid-labs/regex-repo": "0.0.6"
   },
   "browserslist": [
     ">0.2%",
