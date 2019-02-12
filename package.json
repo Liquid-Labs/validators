@@ -3,17 +3,18 @@
   "version": "0.0.4",
   "description": "Validators for user input (strings).",
   "main": "dist/index.js",
+  "module": "dist/index.es.js",
   "files": [
     "dist/index.*",
     "README.md"
   ],
   "scripts": {
-    "lint": "catalyst-scripts \"$PWD\" lint",
-    "lint-fix": "catalyst-scripts \"$PWD\" lint-fix",
-    "build": "catalyst-scripts \"$PWD\" build",
-    "start": "catalyst-scripts \"$PWD\" start",
+    "lint": "catalyst-scripts lint",
+    "lint-fix": "catalyst-scripts lint-fix",
+    "build": "catalyst-scripts build",
+    "start": "catalyst-scripts start",
     "prepare": "npm run lint && npm run build",
-    "pretest": "catalyst-scripts \"$PWD\" build-test",
+    "pretest": "catalyst-scripts build-test",
     "test": "jest --coverage dist"
   },
   "repository": {
@@ -30,12 +31,12 @@
   },
   "homepage": "https://github.com/Liquid-Labs/validators#readme",
   "devDependencies": {
-    "@liquid-labs/catalyst-scripts": "file:liquid-labs-catalyst-scripts-0.0.7.tgz",
-    "@liquid-labs/regex-repo": "0.0.6",
+    "@liquid-labs/catalyst-scripts": "^1.0.0-alpha.9",
+    "@liquid-labs/regex-repo": "latest",
     "jest": "^23.6.0"
   },
   "peerDependencies": {
-    "@liquid-labs/regex-repo": "0.0.6"
+    "@liquid-labs/regex-repo": "latest"
   },
   "browserslist": [
     ">0.2%",
