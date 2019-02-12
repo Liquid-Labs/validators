@@ -1,6 +1,6 @@
 {
   "name": "@liquid-labs/validators",
-  "version": "0.0.4",
+  "version": "1.0.0-prototype.0",
   "description": "Validators for user input (strings).",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
