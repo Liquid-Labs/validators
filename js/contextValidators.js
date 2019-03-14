@@ -1,3 +1,5 @@
+import { notNothingAndString } from './lib'
+
 const fieldsMatch = (field1, field2) => (data) => {
   const value1 = data[field1]
   const value2 = data[field2]
