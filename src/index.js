@@ -24,27 +24,31 @@ const notNothingAndString = (value) => {
 const isRequired = (value) => isStringOrNothing(value)
   && (!value
     ? msgs.isRequired
-    : undefined)
+    : null)
 
 const isEmail = (value) => notNothingAndString(value)
   && (!regex.email.test(value)
     ? msgs.invalidEmail
-    : undefined)
+    : null)
 
 const isUsPhoneNumber = (value) => notNothingAndString(value)
   && (!regex.usPhone.test(value)
     ? msgs.invalidPhoneNumber
-    : undefined)
+    : null)
 
 const isZipCode = (value) => notNothingAndString(value)
   && (!regex.zipCode.test(value)
     ? msgs.invalidZipCode
-    : undefined)
+    : null)
 
-const fieldsMatch = (desc, otherValue) => (value) => notNothingAndString(value)
-  && (otherValue !== value
-    ? desc + ' must match.'
-    : undefined)
+const fieldsMatch = (field1, field2) => (data) => {
+  const value1 = data[field1]
+  const value2 = data[field2]
+  return notNothingAndString(value1) && notNothingAndString(value2)
+    && (value1 !== value2
+      ? `Fields '${field1}' and '${field2}' must match.`
+      : null)
+}
 
 export {
   isRequired,
