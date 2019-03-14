@@ -14,8 +14,8 @@
     "build": "catalyst-scripts build",
     "start": "catalyst-scripts start",
     "prepare": "npm run lint && npm run build",
-    "pretest": "catalyst-scripts build-test",
-    "test": "jest --coverage dist"
+    "pretest": "catalyst-scripts pretest",
+    "test": "catalyst-scripts test"
   },
   "repository": {
     "type": "git",
@@ -31,9 +31,8 @@
   },
   "homepage": "https://github.com/Liquid-Labs/validators#readme",
   "devDependencies": {
-    "@liquid-labs/catalyst-scripts": "^1.0.0-alpha.9",
-    "@liquid-labs/regex-repo": "latest",
-    "jest": "^23.6.0"
+    "@liquid-labs/catalyst-scripts": "^1.0.0-alpha.15",
+    "@liquid-labs/regex-repo": "latest"
   },
   "peerDependencies": {
     "@liquid-labs/regex-repo": "latest"
