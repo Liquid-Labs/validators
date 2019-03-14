@@ -15,7 +15,8 @@
     "start": "catalyst-scripts start",
     "prepare": "npm run lint && npm run build",
     "pretest": "catalyst-scripts pretest",
-    "test": "catalyst-scripts test"
+    "test": "catalyst-scripts test",
+    "postversion": "git push && git push --tags"
   },
   "repository": {
     "type": "git",
