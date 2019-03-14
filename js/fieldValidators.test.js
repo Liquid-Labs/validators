@@ -51,10 +51,9 @@ describe('common empty and non-string handling', () => {
       emptyVal     | desc
       ${undefined} | ${'undefined'}
       ${null}      | ${'null'}
-      ${''}        | ${'empty string'}`
-      (`${key} should accept empty value $desc.`, function({emptyVal}) {
-        expect(fValidators[key].call(null, emptyVal)).toBeNull()
-      })
+      ${''}        | ${'empty string'}`(`${key} should accept empty value $desc.`, function({emptyVal}) {
+  expect(fValidators[key].call(null, emptyVal)).toBeNull()
+})
     }
 
     test.each`
@@ -62,9 +61,8 @@ describe('common empty and non-string handling', () => {
     ${false} | ${'boolean'}
     ${12}    | ${'number'}
     ${{}}    | ${'object'}
-    ${[]}    | ${'array'}`
-    (`${key} should raise error on non-string $desc input`, function({input}) {
-      expect(() => fValidators[key].call(null, input)).toThrow()
-    })
+    ${[]}    | ${'array'}`(`${key} should raise error on non-string $desc input`, function({input}) {
+  expect(() => fValidators[key].call(null, input)).toThrow()
+})
   })
 })
