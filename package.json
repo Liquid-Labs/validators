@@ -32,10 +32,10 @@
   "homepage": "https://github.com/Liquid-Labs/validators#readme",
   "devDependencies": {
     "@liquid-labs/catalyst-scripts": "^1.0.0-alpha.15",
-    "@liquid-labs/regex-repo": "latest"
+    "@liquid-labs/regex-repo": "^1.0.0-alpha.3"
   },
   "peerDependencies": {
-    "@liquid-labs/regex-repo": "latest"
+    "@liquid-labs/regex-repo": "^1.0.0-alpha.2"
   },
   "browserslist": [
     ">0.2%",
