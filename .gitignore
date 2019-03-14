@@ -1,3 +1,6 @@
-dist/
-coverage/
-node_modules/
+/dist/
+/coverage/
+/node_modules/
+/test-staging
+/.yalc
+/yalc-lock
